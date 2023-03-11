@@ -3,16 +3,21 @@ body{
   margin: auto;
   background-color: #ddd;
 }
+
 .accordion {
   margin-bottom: 1.5rem;
   padding: 0;
   list-style: none;
 }
+
 .accordion_item {
   border-bottom: 1px solid #444;
 }
 .accordion_item:last-of-type {
   border-bottom: none;
+}
+.accordion_item:first-of-type {
+  border-top: 1px solid #444;
 }
 /**
 * Элемент label который запускает открыть/закрыть.
@@ -20,21 +25,24 @@ body{
 .accordion_trigger {
   display: flex;
   justify-content: space-between;
-  color: black;
   font-weight: bold;
   cursor: pointer;
   padding: 1.2em;
 }
 .plus{
-  width: 20px;
-  height: 20px;
+  width: 1em;
+  height: 1em;
 }
 .meme{
   margin: auto;
-  width: 320px;
+  width: 30vw;
 }
-
- 
+.accordion_trigger .plus {
+  opacity: 0;
+}
+.accordion:hover .plus {
+  opacity: 100;
+}
 .accordion_toggle {
   position: absolute;
   display: none;
@@ -42,16 +50,13 @@ body{
 
 .accordion_target {
   border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
   overflow: hidden;
   padding: 0;
   position: absolute;
-  width: 1px;
   background-color: #ddd;
   color: #444;
   opacity: 0;
+  text-align: center;
 }
 
 .accordion_toggle:checked ~ .accordion_target {
@@ -64,5 +69,53 @@ body{
   opacity: 100; 
   clip: auto;
   transition: 0.5s;
- 
+  text-align: center;
+}
+.accordion_toggle:checked ~ .accordion_trigger img {
+  transform: rotate(45deg);
+}
+
+.accordion_toggle:checked ~ .accordion_trigger {
+  color: #000;
+}
+
+.accordion_trigger:hover ~ .accordion_target{
+  position: static;
+  overflow: visible;
+  margin: auto;
+  width: auto;
+  height: auto;
+  opacity: 100; 
+  transition: 0.5s;
+}
+.accordion_target:hover{
+  position: static;
+  overflow: visible;
+  margin: auto;
+  width: auto;
+  height: auto;
+  opacity: 100; 
+  transition: 0.5s;
+}
+@media (min-width: 820px)  {
+  body{
+    width: 820px;
+    font-size: 18px;
+  }  
+
+}
+@media (min-width: 1200px)  {
+  body{
+    font-size: 20px;
+    width: 1080px;
+  }  
+  .accordion {
+    margin-bottom: 1.5rem;
+    padding: 0;
+    list-style: none;
+    color:blue;
+  }
+  .accordion:hover{
+    color: black;
+  }
 }
