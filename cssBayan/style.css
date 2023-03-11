@@ -1,0 +1,68 @@
+body{
+  width: 320px;
+  margin: auto;
+  background-color: #ddd;
+}
+.accordion {
+  margin-bottom: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.accordion_item {
+  border-bottom: 1px solid #444;
+}
+.accordion_item:last-of-type {
+  border-bottom: none;
+}
+/**
+* Элемент label который запускает открыть/закрыть.
+*/
+.accordion_trigger {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 1.2em;
+}
+.plus{
+  width: 20px;
+  height: 20px;
+}
+.meme{
+  margin: auto;
+  width: 320px;
+}
+
+ 
+.accordion_toggle {
+  position: absolute;
+  display: none;
+}
+
+.accordion_target {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  background-color: #ddd;
+  color: #444;
+  opacity: 0;
+}
+
+.accordion_toggle:checked ~ .accordion_target {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  margin: auto;
+  width: auto;
+  height: auto;
+  opacity: 100; 
+  clip: auto;
+  transition: 0.5s;
+ 
+}
