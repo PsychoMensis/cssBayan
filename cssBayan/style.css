@@ -1,9 +1,8 @@
 body{
-  width: 320px;
+  width: 80vw;
   margin: auto;
   background-color: #ddd;
 }
-
 .accordion {
   margin-bottom: 1.5rem;
   padding: 0;
@@ -11,17 +10,15 @@ body{
 }
 
 .accordion_item {
-  border-bottom: 1px solid #444;
+  border-bottom: 0.1em solid #444;
 }
 .accordion_item:last-of-type {
   border-bottom: none;
 }
 .accordion_item:first-of-type {
-  border-top: 1px solid #444;
+  border-top: 0.1em solid #444;
 }
-/**
-* Элемент label который запускает открыть/закрыть.
-*/
+
 .accordion_trigger {
   display: flex;
   justify-content: space-between;
@@ -99,15 +96,13 @@ body{
 }
 @media (min-width: 820px)  {
   body{
-    width: 820px;
-    font-size: 18px;
+    font-size: 1.2em;
   }  
 
 }
 @media (min-width: 1200px)  {
   body{
-    font-size: 20px;
-    width: 1080px;
+    font-size: 1.5em;
   }  
   .accordion {
     margin-bottom: 1.5rem;
