@@ -1,0 +1,119 @@
+body{
+  width: 80vw;
+  margin: auto;
+  background-color: #ddd;
+}
+.accordion {
+  margin-bottom: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.accordion_item {
+  border-bottom: 0.1em solid #444;
+}
+.accordion_item:last-of-type {
+  border-bottom: none;
+}
+.accordion_item:first-of-type {
+  border-top: 0.1em solid #444;
+}
+
+.accordion_trigger {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 1.2em;
+}
+.plus{
+  width: 1em;
+  height: 1em;
+}
+.meme{
+  margin: auto;
+  width: 30vw;
+}
+.accordion_trigger .plus {
+  opacity: 0;
+}
+.accordion:hover .plus {
+  opacity: 100;
+}
+.accordion_toggle {
+  position: absolute;
+  display: none;
+}
+
+.accordion_target {
+  border: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  background-color: #ddd;
+  color: #444;
+  opacity: 0;
+  text-align: center;
+}
+
+.accordion_toggle:checked ~ .accordion_target {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  margin: auto;
+  width: auto;
+  height: auto;
+  opacity: 100; 
+  clip: auto;
+  transition: 0.5s;
+  text-align: center;
+}
+.accordion_toggle:checked ~ .accordion_trigger img {
+  transform: rotate(45deg);
+}
+
+.accordion_toggle:checked ~ .accordion_trigger {
+  color: #000;
+}
+
+.accordion_trigger:hover ~ .accordion_target{
+  position: static;
+  overflow: visible;
+  margin: auto;
+  width: auto;
+  height: auto;
+  opacity: 100; 
+  transition: 0.5s;
+}
+.accordion_target:hover{
+  position: static;
+  overflow: visible;
+  margin: auto;
+  width: auto;
+  height: auto;
+  opacity: 100; 
+  transition: 0.5s;
+}
+@media (min-width: 820px)  {
+  body{
+    font-size: 1.2em;
+  }  
+
+}
+@media (min-width: 1200px)  {
+  body{
+    font-size: 1.3em;
+  }  
+  .accordion {
+    margin-bottom: 1.5rem;
+    padding: 0;
+    list-style: none;
+    color:blue;
+  }
+  .accordion:hover{
+    color: black;
+  }
+  .meme{
+    width: 25vw;
+  }
+}
